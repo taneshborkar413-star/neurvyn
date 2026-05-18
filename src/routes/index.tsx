@@ -12,9 +12,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Neurvyn — From business software to operational intelligence" },
-      { name: "description", content: "Neurvyn connects operations, understands workflows, and builds the intelligence layer modern businesses will run on." },
+      {
+        name: "description",
+        content:
+          "Neurvyn connects operations, understands workflows, and builds the intelligence layer modern businesses will run on.",
+      },
       { property: "og:title", content: "Neurvyn — Operational intelligence for modern businesses" },
-      { property: "og:description", content: "One ecosystem. Five layers. From daily utility to autonomous operations." },
+      {
+        property: "og:description",
+        content: "One ecosystem. Five layers. From daily utility to autonomous operations.",
+      },
     ],
   }),
   component: Index,
@@ -43,8 +50,8 @@ function Index() {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
           >
-            Neurvyn connects operations, understands workflows, and builds the
-            intelligence layer modern businesses will run on.
+            Neurvyn connects operations, understands workflows, and builds the intelligence layer
+            modern businesses will run on.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -52,8 +59,12 @@ function Index() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <SignalButton to="/ecosystem" variant="primary">Explore the ecosystem</SignalButton>
-            <SignalButton to="/ledger" variant="ghost">View Neurvyn Ledger</SignalButton>
+            <SignalButton to="/ecosystem" variant="primary">
+              Explore the ecosystem
+            </SignalButton>
+            <SignalButton to="/ledger" variant="ghost">
+              View Neurvyn Ledger
+            </SignalButton>
           </motion.div>
 
           <motion.div
@@ -74,12 +85,13 @@ function Index() {
             <div>
               <SectionLabel>The shift</SectionLabel>
               <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight md:text-5xl">
-                Every era redefines <span className="text-gradient-signal">what business runs on.</span>
+                Every era redefines{" "}
+                <span className="text-gradient-signal">what business runs on.</span>
               </h2>
             </div>
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              Each generation of business tooling collapsed the previous one's friction. We are
-              now at the inflection where disconnected systems give way to operational intelligence —
+              Each generation of business tooling collapsed the previous one's friction. We are now
+              at the inflection where disconnected systems give way to operational intelligence —
               software that understands workflows, not just records them.
             </p>
           </div>
@@ -94,17 +106,23 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionLabel>Why current software breaks</SectionLabel>
           <h2 className="mt-6 max-w-4xl font-display text-4xl leading-tight tracking-tight md:text-5xl">
-            Modern businesses run on <span className="text-foreground/60">tools that don't talk.</span>
+            Modern businesses run on{" "}
+            <span className="text-foreground/60">tools that don't talk.</span>
           </h2>
           <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
             {[
-              { t: "Disconnected tools", d: "Twelve apps. Twelve sources of truth. Zero shared operational memory." },
+              {
+                t: "Disconnected tools",
+                d: "Twelve apps. Twelve sources of truth. Zero shared operational memory.",
+              },
               { t: "Reactive systems", d: "Dashboards show what happened, never what to do next." },
               { t: "Reports without action", d: "Insight ends in a PDF. Execution stays manual." },
               { t: "Data without intelligence", d: "Rows accumulate; understanding doesn't." },
             ].map((c, i) => (
               <div key={c.t} className="bg-background p-8">
-                <div className="font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</div>
+                <div className="font-mono text-xs text-muted-foreground">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
                 <h3 className="mt-4 font-display text-lg text-foreground">{c.t}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
               </div>
@@ -140,7 +158,8 @@ function Index() {
           <SectionLabel>Operational intelligence</SectionLabel>
           <div className="mt-6 grid gap-10 md:grid-cols-2 md:items-center">
             <h2 className="font-display text-4xl leading-tight tracking-tight md:text-5xl">
-              Software that <span className="text-gradient-signal">understands</span> the work, not just records it.
+              Software that <span className="text-gradient-signal">understands</span> the work, not
+              just records it.
             </h2>
             <ul className="space-y-5 text-base text-muted-foreground md:text-lg">
               {[
@@ -165,7 +184,8 @@ function Index() {
           <SectionLabel>Tech Solutions — the implementation bridge</SectionLabel>
           <div className="mt-6 grid gap-12 md:grid-cols-[2fr_3fr]">
             <h2 className="font-display text-4xl leading-tight tracking-tight md:text-5xl">
-              Intelligence means nothing if it doesn't <span className="text-foreground/60">land in the business.</span>
+              Intelligence means nothing if it doesn't{" "}
+              <span className="text-foreground/60">land in the business.</span>
             </h2>
             <div className="space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
@@ -173,11 +193,14 @@ function Index() {
                 business — websites, automation, workflow setup, AI integration.
               </p>
               <p>
-                It is how operational transformation actually happens. Real systems. Real
-                workflows. Real outcomes — not a deck.
+                It is how operational transformation actually happens. Real systems. Real workflows.
+                Real outcomes — not a deck.
               </p>
               <div className="pt-2">
-                <Link to="/solutions" className="inline-flex items-center gap-2 text-sm text-primary hover:text-secondary">
+                <Link
+                  to="/solutions"
+                  className="inline-flex items-center gap-2 text-sm text-primary hover:text-secondary"
+                >
                   See how Solutions works
                   <span>→</span>
                 </Link>
@@ -200,6 +223,54 @@ function Index() {
         </div>
       </section>
 
+      {/* COMPLETE JOURNEY */}
+      <section className="border-t border-border py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-10 md:grid-cols-[1fr_2fr]">
+            <div>
+              <SectionLabel>End-to-end journey</SectionLabel>
+              <h2 className="mt-6 font-display text-4xl leading-tight tracking-tight md:text-5xl">
+                Everything a buyer needs to evaluate, trust, and launch.
+              </h2>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  to: "/pricing",
+                  title: "Pricing paths",
+                  text: "Pilot, scale, and enterprise autonomy packages for different rollout depths.",
+                },
+                {
+                  to: "/security",
+                  title: "Security model",
+                  text: "Governance, auditability, supervised actions, and operational controls.",
+                },
+                {
+                  to: "/resources",
+                  title: "Resources",
+                  text: "Guides and playbooks for workflow mapping, business memory, and autonomy readiness.",
+                },
+                {
+                  to: "/contact",
+                  title: "Contact",
+                  text: "A focused intake flow for demos, partnerships, and implementation planning.",
+                },
+              ].map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="group rounded-2xl border border-border bg-surface/50 p-6 transition-colors hover:border-primary/50"
+                >
+                  <h3 className="font-display text-xl text-foreground">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                  <span className="mt-5 inline-flex text-sm text-primary">Open page →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL POSITIONING */}
       <section className="relative overflow-hidden border-t border-border py-32 md:py-40">
         <AmbientMesh />
@@ -213,8 +284,12 @@ function Index() {
             <span className="text-foreground">Neurvyn is building that layer.</span>
           </h2>
           <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <SignalButton to="/ecosystem" variant="primary">Explore the ecosystem</SignalButton>
-            <SignalButton to="/contact" variant="ghost">Talk to us</SignalButton>
+            <SignalButton to="/ecosystem" variant="primary">
+              Explore the ecosystem
+            </SignalButton>
+            <SignalButton to="/contact" variant="ghost">
+              Talk to us
+            </SignalButton>
           </div>
         </div>
       </section>

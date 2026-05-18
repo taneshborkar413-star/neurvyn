@@ -28,8 +28,20 @@ export function SignalButton({ variant = "primary", children, href, to, ...rest 
         />
       )}
       <span className="relative">{children}</span>
-      <svg width="14" height="14" viewBox="0 0 14 14" className="relative transition-transform duration-300 group-hover:translate-x-0.5" fill="none">
-        <path d="M3 7h8M7.5 3l3.5 4-3.5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        className="relative transition-transform duration-300 group-hover:translate-x-0.5"
+        fill="none"
+      >
+        <path
+          d="M3 7h8M7.5 3l3.5 4-3.5 4"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </>
   );

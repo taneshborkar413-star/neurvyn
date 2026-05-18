@@ -58,9 +58,13 @@ export function ProductPageShell({ p }: { p: ProductDef }) {
           <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
             {p.capabilities.map((c, i) => (
               <div key={c.title} className="bg-background p-8">
-                <div className="font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</div>
+                <div className="font-mono text-xs text-muted-foreground">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
                 <h3 className="mt-3 font-display text-xl text-foreground">{c.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {c.description}
+                </p>
               </div>
             ))}
           </div>
@@ -78,20 +82,32 @@ export function ProductPageShell({ p }: { p: ProductDef }) {
             </div>
             <div className="flex flex-col gap-3 md:items-end">
               {p.prev && (
-                <Link to={p.prev.to} className="group inline-flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground">
-                  <span>←</span> Previous layer · <span className="text-foreground">{p.prev.label}</span>
+                <Link
+                  to={p.prev.to}
+                  className="group inline-flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground"
+                >
+                  <span>←</span> Previous layer ·{" "}
+                  <span className="text-foreground">{p.prev.label}</span>
                 </Link>
               )}
               {p.next && (
-                <Link to={p.next.to} className="group inline-flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground">
-                  Next layer · <span className="text-foreground">{p.next.label}</span> <span>→</span>
+                <Link
+                  to={p.next.to}
+                  className="group inline-flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground"
+                >
+                  Next layer · <span className="text-foreground">{p.next.label}</span>{" "}
+                  <span>→</span>
                 </Link>
               )}
             </div>
           </div>
           <div className="mt-12 flex flex-wrap gap-4">
-            <SignalButton to="/contact" variant="primary">Talk to us</SignalButton>
-            <SignalButton to="/ecosystem" variant="ghost">View the ecosystem</SignalButton>
+            <SignalButton to="/contact" variant="primary">
+              Talk to us
+            </SignalButton>
+            <SignalButton to="/ecosystem" variant="ghost">
+              View the ecosystem
+            </SignalButton>
           </div>
         </div>
       </section>

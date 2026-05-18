@@ -9,7 +9,9 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "start": "node cloud-run-server.mjs",
+    "docker:build": "docker build -t neurvyn-cloud-run ."
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",

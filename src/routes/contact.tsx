@@ -7,9 +7,15 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Neurvyn" },
-      { name: "description", content: "Talk to the Neurvyn team about operational intelligence for your business." },
+      {
+        name: "description",
+        content: "Talk to the Neurvyn team about operational intelligence for your business.",
+      },
       { property: "og:title", content: "Contact Neurvyn" },
-      { property: "og:description", content: "Reach out about the operational intelligence ecosystem." },
+      {
+        property: "og:description",
+        content: "Reach out about the operational intelligence ecosystem.",
+      },
     ],
   }),
   component: Contact,
@@ -25,7 +31,8 @@ function Contact() {
         <div className="relative mx-auto max-w-5xl px-6">
           <SectionLabel>Contact</SectionLabel>
           <h1 className="mt-8 font-display text-5xl font-medium leading-[1.05] tracking-tight md:text-6xl">
-            Talk to the team building <span className="text-gradient-signal">the operational layer.</span>
+            Talk to the team building{" "}
+            <span className="text-gradient-signal">the operational layer.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             For demos, implementation, partnerships and operational transformation.
@@ -38,7 +45,9 @@ function Contact() {
           <div className="rounded-3xl border border-border bg-surface/60 p-8 md:p-12">
             {sent ? (
               <div className="text-center py-12">
-                <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Signal received</div>
+                <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  Signal received
+                </div>
                 <h2 className="mt-4 font-display text-3xl text-gradient">Thank you.</h2>
                 <p className="mt-3 text-sm text-muted-foreground">
                   The team will respond within one business day.
@@ -46,7 +55,10 @@ function Contact() {
               </div>
             ) : (
               <form
-                onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setSent(true);
+                }}
                 className="space-y-6"
               >
                 {[
@@ -55,7 +67,10 @@ function Contact() {
                   { id: "company", label: "Company", type: "text", placeholder: "Company name" },
                 ].map((f) => (
                   <div key={f.id}>
-                    <label htmlFor={f.id} className="block text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                    <label
+                      htmlFor={f.id}
+                      className="block text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground"
+                    >
                       {f.label}
                     </label>
                     <input
@@ -69,7 +84,10 @@ function Contact() {
                   </div>
                 ))}
                 <div>
-                  <label htmlFor="message" className="block text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  <label
+                    htmlFor="message"
+                    className="block text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground"
+                  >
                     Operational context
                   </label>
                   <textarea
@@ -85,10 +103,20 @@ function Contact() {
                   type="submit"
                   className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-medium text-primary-foreground ring-signal"
                 >
-                  <span aria-hidden className="absolute inset-0 -z-10" style={{ background: "var(--gradient-signal)" }} />
+                  <span
+                    aria-hidden
+                    className="absolute inset-0 -z-10"
+                    style={{ background: "var(--gradient-signal)" }}
+                  />
                   Send signal
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M3 7h8M7.5 3l3.5 4-3.5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                      d="M3 7h8M7.5 3l3.5 4-3.5 4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
               </form>

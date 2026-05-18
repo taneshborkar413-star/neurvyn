@@ -24,7 +24,10 @@ function NotFoundComponent() {
         <p className="mt-4 text-sm text-muted-foreground">
           This route is not part of the operational ecosystem.
         </p>
-        <Link to="/" className="mt-8 inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm text-foreground hover:border-primary/60">
+        <Link
+          to="/"
+          className="mt-8 inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm text-foreground hover:border-primary/60"
+        >
           Return home
         </Link>
       </div>
@@ -38,17 +41,24 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">System error</div>
+        <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          System error
+        </div>
         <h1 className="mt-6 font-display text-2xl text-foreground">This page didn't load</h1>
         <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>
         <div className="mt-6 flex justify-center gap-3">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
           >
             Try again
           </button>
-          <a href="/" className="rounded-full border border-border px-4 py-2 text-sm">Go home</a>
+          <a href="/" className="rounded-full border border-border px-4 py-2 text-sm">
+            Go home
+          </a>
         </div>
       </div>
     </div>
@@ -68,14 +78,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Neurvyn" },
       { property: "og:title", content: "Neurvyn — The operational intelligence ecosystem" },
-      { property: "og:description", content: "Plan Whisperer reads and understands project plans to extract key information." },
+      {
+        property: "og:description",
+        content:
+          "A complete operational intelligence website for connected workflows, business memory, insights, and supervised autonomy.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Neurvyn — The operational intelligence ecosystem" },
-      { name: "description", content: "Plan Whisperer reads and understands project plans to extract key information." },
-      { name: "twitter:description", content: "Plan Whisperer reads and understands project plans to extract key information." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9248c47b-2439-404b-8a75-535b2852d849/id-preview-3d9080e8--6885b945-311b-49f7-8f2c-6d8b944afd82.lovable.app-1779092730590.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9248c47b-2439-404b-8a75-535b2852d849/id-preview-3d9080e8--6885b945-311b-49f7-8f2c-6d8b944afd82.lovable.app-1779092730590.png" },
+      {
+        name: "twitter:description",
+        content:
+          "A complete operational intelligence website for connected workflows, business memory, insights, and supervised autonomy.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9248c47b-2439-404b-8a75-535b2852d849/id-preview-3d9080e8--6885b945-311b-49f7-8f2c-6d8b944afd82.lovable.app-1779092730590.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9248c47b-2439-404b-8a75-535b2852d849/id-preview-3d9080e8--6885b945-311b-49f7-8f2c-6d8b944afd82.lovable.app-1779092730590.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
