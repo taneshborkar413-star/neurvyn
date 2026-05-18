@@ -5,9 +5,16 @@ export const Route = createFileRoute("/autopilot")({
   head: () => ({
     meta: [
       { title: "Neurvyn Autopilot — Autonomous execution" },
-      { name: "description", content: "Operations that run themselves. The destination of the operational intelligence curve." },
+      {
+        name: "description",
+        content:
+          "Operations that run themselves. The destination of the operational intelligence curve.",
+      },
       { property: "og:title", content: "Neurvyn Autopilot" },
-      { property: "og:description", content: "Autonomous operational execution — built on top of the full Neurvyn ecosystem." },
+      {
+        property: "og:description",
+        content: "Autonomous operational execution — built on top of the full Neurvyn ecosystem.",
+      },
     ],
   }),
   component: () => (
@@ -22,10 +29,26 @@ export const Route = createFileRoute("/autopilot")({
         ecosystemRole:
           "Autopilot is the execution layer. It only works because Ledger, Solutions, OS and Intelligence already exist — it is the destination of the whole arc.",
         capabilities: [
-          { title: "Autonomous workflows", description: "Recurring operational sequences executed end-to-end without manual orchestration." },
-          { title: "Supervised actions", description: "Every autonomous step is auditable, scoped and reversible — humans stay in command." },
-          { title: "Adaptive execution", description: "Workflows adjust to operational context detected by Intelligence in real time." },
-          { title: "Operational guardrails", description: "Policies, thresholds and approvals defined at the ecosystem level — not glued to each tool." },
+          {
+            title: "Autonomous workflows",
+            description:
+              "Recurring operational sequences executed end-to-end without manual orchestration.",
+          },
+          {
+            title: "Supervised actions",
+            description:
+              "Every autonomous step is auditable, scoped and reversible — humans stay in command.",
+          },
+          {
+            title: "Adaptive execution",
+            description:
+              "Workflows adjust to operational context detected by Intelligence in real time.",
+          },
+          {
+            title: "Operational guardrails",
+            description:
+              "Policies, thresholds and approvals defined at the ecosystem level — not glued to each tool.",
+          },
         ],
         prev: { to: "/intelligence", label: "Intelligence" },
       }}

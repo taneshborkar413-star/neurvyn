@@ -14,7 +14,10 @@ export function EvolutionTimeline() {
       <div
         aria-hidden
         className="absolute left-0 right-0 top-[34px] hidden h-px md:block"
-        style={{ background: "linear-gradient(90deg, transparent, color-mix(in oklab, var(--primary) 45%, transparent), transparent)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, color-mix(in oklab, var(--primary) 45%, transparent), transparent)",
+        }}
       />
       <ol className="grid gap-8 md:grid-cols-5 md:gap-4">
         {STAGES.map((s, i) => (
@@ -27,11 +30,17 @@ export function EvolutionTimeline() {
             className="relative"
           >
             <div className="flex items-center gap-3 md:flex-col md:items-start">
-              <div className="relative z-10 h-3 w-3 shrink-0 rounded-full" style={{
-                background: i === STAGES.length - 1 ? "var(--gradient-signal)" : "oklch(1 0 0 / 0.25)",
-                boxShadow: i === STAGES.length - 1 ? "0 0 24px -2px var(--primary)" : "none",
-              }} />
-              <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">{s.era}</div>
+              <div
+                className="relative z-10 h-3 w-3 shrink-0 rounded-full"
+                style={{
+                  background:
+                    i === STAGES.length - 1 ? "var(--gradient-signal)" : "oklch(1 0 0 / 0.25)",
+                  boxShadow: i === STAGES.length - 1 ? "0 0 24px -2px var(--primary)" : "none",
+                }}
+              />
+              <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                {s.era}
+              </div>
             </div>
             <div className="mt-4 font-display text-lg text-foreground">{s.label}</div>
             <p className="mt-1 text-sm text-muted-foreground">{s.note}</p>

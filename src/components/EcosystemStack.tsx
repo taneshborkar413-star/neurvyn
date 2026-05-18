@@ -62,12 +62,16 @@ export function EcosystemStack() {
             <div
               aria-hidden
               className="absolute -left-px top-0 bottom-0 w-px opacity-60 transition-opacity duration-500 group-hover:opacity-100"
-              style={{ background: `linear-gradient(180deg, transparent, ${layer.accent}, transparent)` }}
+              style={{
+                background: `linear-gradient(180deg, transparent, ${layer.accent}, transparent)`,
+              }}
             />
             <div
               aria-hidden
               className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-              style={{ background: `radial-gradient(ellipse 50% 80% at 0% 50%, color-mix(in oklab, ${layer.accent} 18%, transparent), transparent 60%)` }}
+              style={{
+                background: `radial-gradient(ellipse 50% 80% at 0% 50%, color-mix(in oklab, ${layer.accent} 18%, transparent), transparent 60%)`,
+              }}
             />
             <div className="relative grid gap-4 md:grid-cols-[1fr_2fr_auto] md:items-center md:gap-8">
               <div className="flex items-baseline gap-4">
@@ -88,8 +92,20 @@ export function EcosystemStack() {
               </p>
               <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-foreground/80 transition-colors group-hover:text-primary">
                 Open
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform group-hover:translate-x-0.5">
-                  <path d="M3 7h8M7.5 3l3.5 4-3.5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  className="transition-transform group-hover:translate-x-0.5"
+                >
+                  <path
+                    d="M3 7h8M7.5 3l3.5 4-3.5 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
             </div>
