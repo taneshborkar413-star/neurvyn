@@ -9,8 +9,56 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as OsRouteImport } from './routes/os'
+import { Route as LedgerRouteImport } from './routes/ledger'
+import { Route as IntelligenceRouteImport } from './routes/intelligence'
+import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AutopilotRouteImport } from './routes/autopilot'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OsRoute = OsRouteImport.update({
+  id: '/os',
+  path: '/os',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LedgerRoute = LedgerRouteImport.update({
+  id: '/ledger',
+  path: '/ledger',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IntelligenceRoute = IntelligenceRouteImport.update({
+  id: '/intelligence',
+  path: '/intelligence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcosystemRoute = EcosystemRouteImport.update({
+  id: '/ecosystem',
+  path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutopilotRoute = AutopilotRouteImport.update({
+  id: '/autopilot',
+  path: '/autopilot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +67,144 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/autopilot': typeof AutopilotRoute
+  '/contact': typeof ContactRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/intelligence': typeof IntelligenceRoute
+  '/ledger': typeof LedgerRoute
+  '/os': typeof OsRoute
+  '/solutions': typeof SolutionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/autopilot': typeof AutopilotRoute
+  '/contact': typeof ContactRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/intelligence': typeof IntelligenceRoute
+  '/ledger': typeof LedgerRoute
+  '/os': typeof OsRoute
+  '/solutions': typeof SolutionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/autopilot': typeof AutopilotRoute
+  '/contact': typeof ContactRoute
+  '/ecosystem': typeof EcosystemRoute
+  '/intelligence': typeof IntelligenceRoute
+  '/ledger': typeof LedgerRoute
+  '/os': typeof OsRoute
+  '/solutions': typeof SolutionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/autopilot'
+    | '/contact'
+    | '/ecosystem'
+    | '/intelligence'
+    | '/ledger'
+    | '/os'
+    | '/solutions'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/autopilot'
+    | '/contact'
+    | '/ecosystem'
+    | '/intelligence'
+    | '/ledger'
+    | '/os'
+    | '/solutions'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/autopilot'
+    | '/contact'
+    | '/ecosystem'
+    | '/intelligence'
+    | '/ledger'
+    | '/os'
+    | '/solutions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AutopilotRoute: typeof AutopilotRoute
+  ContactRoute: typeof ContactRoute
+  EcosystemRoute: typeof EcosystemRoute
+  IntelligenceRoute: typeof IntelligenceRoute
+  LedgerRoute: typeof LedgerRoute
+  OsRoute: typeof OsRoute
+  SolutionsRoute: typeof SolutionsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/os': {
+      id: '/os'
+      path: '/os'
+      fullPath: '/os'
+      preLoaderRoute: typeof OsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ledger': {
+      id: '/ledger'
+      path: '/ledger'
+      fullPath: '/ledger'
+      preLoaderRoute: typeof LedgerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/intelligence': {
+      id: '/intelligence'
+      path: '/intelligence'
+      fullPath: '/intelligence'
+      preLoaderRoute: typeof IntelligenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ecosystem': {
+      id: '/ecosystem'
+      path: '/ecosystem'
+      fullPath: '/ecosystem'
+      preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/autopilot': {
+      id: '/autopilot'
+      path: '/autopilot'
+      fullPath: '/autopilot'
+      preLoaderRoute: typeof AutopilotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +217,25 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AutopilotRoute: AutopilotRoute,
+  ContactRoute: ContactRoute,
+  EcosystemRoute: EcosystemRoute,
+  IntelligenceRoute: IntelligenceRoute,
+  LedgerRoute: LedgerRoute,
+  OsRoute: OsRoute,
+  SolutionsRoute: SolutionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
