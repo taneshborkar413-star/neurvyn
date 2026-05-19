@@ -1,0 +1,16 @@
+# Exported from Render on 2026-05-19T00:18:06Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: neurvyn1
+      runtime: static
+      repo: https://github.com/taneshborkar413-star/neurvyn
+      branch: codex/create-complete-end-to-end-website-r4lz8z
+      staticPublishPath: Build
+      autoDeployTrigger: commit
+      previews:
+        generation: automatic
