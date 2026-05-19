@@ -2,6 +2,13 @@
  * Hero signal network — an SVG of connected operational nodes
  * with pulsing signals traveling between layers. Pure SVG/CSS.
  */
+
+// Pre-computed delay values to avoid hydration mismatch from Math.random()
+const DELAY_VALUES = [
+  1.13, 1.23, 1.82, 2.25, 1.71, 1.0, 3.69, 3.45, 2.59, 3.53, 1.02, 0.27, 1.23,
+  0.59, 2.97, 1.11, 1.92, 2.7, 2.75, 3.65,
+];
+
 export function SignalNetwork() {
   // Five layered columns of nodes representing ecosystem layers
   const layers = [
@@ -13,11 +20,19 @@ export function SignalNetwork() {
   ];
 
   const connections: Array<[number, number, number, number, number]> = [];
+  let delayIndex = 0;
   for (let i = 0; i < layers.length - 1; i++) {
     layers[i].nodes.forEach((y1) => {
       layers[i + 1].nodes.forEach((y2, j) => {
         if (j % 2 === i % 2) {
-          connections.push([layers[i].x, y1, layers[i + 1].x, y2, Math.random() * 4]);
+          connections.push([
+            layers[i].x,
+            y1,
+            layers[i + 1].x,
+            y2,
+            DELAY_VALUES[delayIndex % DELAY_VALUES.length],
+          ]);
+          delayIndex++;
         }
       });
     });

@@ -137,15 +137,19 @@ function SmoothScroll() {
     let raf = 0;
     let lenis: { raf: (t: number) => void; destroy: () => void } | null = null;
     let mounted = true;
-    import("lenis").then(({ default: Lenis }) => {
-      if (!mounted) return;
-      lenis = new Lenis({ duration: 1.1, smoothWheel: true }) as never;
-      const loop = (time: number) => {
-        lenis?.raf(time);
+    import("lenis")
+      .then(({ default: Lenis }) => {
+        if (!mounted) return;
+        lenis = new Lenis({ duration: 1.1, smoothWheel: true }) as never;
+        const loop = (time: number) => {
+          lenis?.raf(time);
+          raf = requestAnimationFrame(loop);
+        };
         raf = requestAnimationFrame(loop);
-      };
-      raf = requestAnimationFrame(loop);
-    });
+      })
+      .catch(() => {
+        // Gracefully handle lenis import failure
+      });
     return () => {
       mounted = false;
       cancelAnimationFrame(raf);
