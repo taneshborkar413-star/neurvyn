@@ -8,6 +8,9 @@ const NAV = [
   { to: "/solutions", label: "Solutions" },
   { to: "/os", label: "OS" },
   { to: "/intelligence", label: "Intelligence" },
+  { to: "/pricing", label: "Pricing" },
+  { to: "/resources", label: "Resources" },
+  { to: "/security", label: "Security" },
   { to: "/about", label: "About" },
 ] as const;
 
@@ -37,14 +40,21 @@ export function SiteHeader() {
                 <stop offset="100%" stopColor="oklch(0.72 0.16 250)" />
               </linearGradient>
             </defs>
-            <path d="M3 18V4l8 11V4M11 18l8-14v14" stroke="url(#logo-grad)" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M3 18V4l8 11V4M11 18l8-14v14"
+              stroke="url(#logo-grad)"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
           <span className="font-display text-base font-semibold tracking-tight text-foreground">
             Neurvyn
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.to}
@@ -57,24 +67,30 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <SignalButton to="/contact" variant="primary">Talk to us</SignalButton>
+        <div className="hidden lg:block">
+          <SignalButton to="/contact" variant="primary">
+            Talk to us
+          </SignalButton>
         </div>
 
         <button
           onClick={() => setOpen(!open)}
-          className="grid h-9 w-9 place-items-center rounded-full border border-border md:hidden"
+          className="grid h-9 w-9 place-items-center rounded-full border border-border lg:hidden"
           aria-label="Toggle menu"
         >
           <span className="flex flex-col gap-1">
-            <span className={`h-px w-4 bg-foreground transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`} />
-            <span className={`h-px w-4 bg-foreground transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`} />
+            <span
+              className={`h-px w-4 bg-foreground transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`}
+            />
+            <span
+              className={`h-px w-4 bg-foreground transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`}
+            />
           </span>
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-border bg-background/95 backdrop-blur-xl lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
             {NAV.map((item) => (
               <Link
@@ -87,7 +103,11 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link to="/contact" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-primary px-4 py-2.5 text-center text-sm font-medium text-primary-foreground">
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-full bg-primary px-4 py-2.5 text-center text-sm font-medium text-primary-foreground"
+            >
               Talk to us
             </Link>
           </nav>

@@ -9,19 +9,27 @@ export function RoadmapFlow() {
             <div className="flex items-center gap-3 md:flex-col md:gap-3">
               <div
                 className="grid h-12 w-12 place-items-center rounded-full border border-border-strong bg-background font-mono text-xs text-muted-foreground"
-                style={i === STEPS.length - 1 ? { borderColor: "color-mix(in oklab, var(--primary) 60%, transparent)", color: "var(--foreground)" } : undefined}
+                style={
+                  i === STEPS.length - 1
+                    ? {
+                        borderColor: "color-mix(in oklab, var(--primary) 60%, transparent)",
+                        color: "var(--foreground)",
+                      }
+                    : undefined
+                }
               >
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="font-display text-base text-foreground md:text-center">
-                {step}
-              </div>
+              <div className="font-display text-base text-foreground md:text-center">{step}</div>
             </div>
             {i < STEPS.length - 1 && (
               <div className="hidden flex-1 md:block">
                 <div
                   className="h-px w-full"
-                  style={{ background: "linear-gradient(90deg, color-mix(in oklab, var(--primary) 35%, transparent), transparent)" }}
+                  style={{
+                    background:
+                      "linear-gradient(90deg, color-mix(in oklab, var(--primary) 35%, transparent), transparent)",
+                  }}
                 />
               </div>
             )}

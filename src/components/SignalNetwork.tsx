@@ -16,7 +16,7 @@ export function SignalNetwork() {
   for (let i = 0; i < layers.length - 1; i++) {
     layers[i].nodes.forEach((y1) => {
       layers[i + 1].nodes.forEach((y2, j) => {
-        if (j % 2 === (i % 2)) {
+        if (j % 2 === i % 2) {
           connections.push([layers[i].x, y1, layers[i + 1].x, y2, Math.random() * 4]);
         }
       });
@@ -25,11 +25,7 @@ export function SignalNetwork() {
 
   return (
     <div className="relative w-full">
-      <svg
-        viewBox="0 0 800 480"
-        className="w-full h-auto"
-        aria-hidden
-      >
+      <svg viewBox="0 0 800 480" className="w-full h-auto" aria-hidden>
         <defs>
           <linearGradient id="line-grad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="oklch(0.63 0.22 285)" stopOpacity="0.05" />
@@ -50,7 +46,10 @@ export function SignalNetwork() {
         {connections.map(([x1, y1, x2, y2, delay], i) => (
           <g key={`c-${i}`}>
             <line
-              x1={x1} y1={y1} x2={x2} y2={y2}
+              x1={x1}
+              y1={y1}
+              x2={x2}
+              y2={y2}
               stroke="url(#line-grad)"
               strokeWidth="0.8"
               opacity="0.5"
@@ -72,14 +71,26 @@ export function SignalNetwork() {
             <g key={`n-${li}-${ni}`}>
               <circle cx={layer.x} cy={y} r="20" fill="url(#node-glow)" opacity="0.6" />
               <circle
-                cx={layer.x} cy={y} r="4"
+                cx={layer.x}
+                cy={y}
+                r="4"
                 fill="oklch(0.97 0.005 250)"
                 className="animate-signal-pulse"
-                style={{ animationDelay: `${(li + ni) * 0.3}s`, transformOrigin: `${layer.x}px ${y}px` }}
+                style={{
+                  animationDelay: `${(li + ni) * 0.3}s`,
+                  transformOrigin: `${layer.x}px ${y}px`,
+                }}
               />
-              <circle cx={layer.x} cy={y} r="6" fill="none" stroke="oklch(1 0 0 / 0.15)" strokeWidth="0.8" />
+              <circle
+                cx={layer.x}
+                cy={y}
+                r="6"
+                fill="none"
+                stroke="oklch(1 0 0 / 0.15)"
+                strokeWidth="0.8"
+              />
             </g>
-          ))
+          )),
         )}
 
         {/* Layer labels */}

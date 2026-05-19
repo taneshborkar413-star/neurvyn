@@ -13,6 +13,14 @@ const GROUPS = [
     ],
   },
   {
+    title: "Resources",
+    links: [
+      { to: "/pricing", label: "Pricing" },
+      { to: "/resources", label: "Guides" },
+      { to: "/security", label: "Security" },
+    ],
+  },
+  {
     title: "Company",
     links: [
       { to: "/about", label: "About" },
@@ -25,16 +33,24 @@ export function SiteFooter() {
   return (
     <footer className="relative border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
           <div>
             <Link to="/" className="flex items-center gap-2.5">
               <svg width="22" height="22" viewBox="0 0 22 22">
-                <path d="M3 18V4l8 11V4M11 18l8-14v14" stroke="oklch(0.63 0.22 285)" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M3 18V4l8 11V4M11 18l8-14v14"
+                  stroke="oklch(0.63 0.22 285)"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
               <span className="font-display text-base font-semibold">Neurvyn</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              The operational intelligence ecosystem for modern businesses. Connected systems, business memory, autonomous workflows.
+              The operational intelligence ecosystem for modern businesses. Connected systems,
+              business memory, autonomous workflows.
             </p>
           </div>
           {GROUPS.map((g) => (
@@ -45,7 +61,10 @@ export function SiteFooter() {
               <ul className="mt-4 space-y-2.5">
                 {g.links.map((l) => (
                   <li key={l.to}>
-                    <Link to={l.to} className="text-sm text-foreground/80 transition-colors hover:text-primary">
+                    <Link
+                      to={l.to}
+                      className="text-sm text-foreground/80 transition-colors hover:text-primary"
+                    >
                       {l.label}
                     </Link>
                   </li>

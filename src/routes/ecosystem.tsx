@@ -9,9 +9,16 @@ export const Route = createFileRoute("/ecosystem")({
   head: () => ({
     meta: [
       { title: "Ecosystem — Neurvyn" },
-      { name: "description", content: "The five-layer operational stack: Ledger, Solutions, OS, Intelligence, Autopilot." },
+      {
+        name: "description",
+        content:
+          "The five-layer operational stack: Ledger, Solutions, OS, Intelligence, Autopilot.",
+      },
       { property: "og:title", content: "The Neurvyn Ecosystem" },
-      { property: "og:description", content: "One connected operational intelligence stack — built for modern businesses." },
+      {
+        property: "og:description",
+        content: "One connected operational intelligence stack — built for modern businesses.",
+      },
     ],
   }),
   component: Ecosystem,
@@ -28,8 +35,8 @@ function Ecosystem() {
             One connected <span className="text-gradient-signal">operational stack.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            The Neurvyn ecosystem is built as a progression — each layer independently
-            useful, and each one more intelligent than the last.
+            The Neurvyn ecosystem is built as a progression — each layer independently useful, and
+            each one more intelligent than the last.
           </p>
           <div className="mt-16 rounded-3xl border border-border bg-surface/30 p-4 md:p-8">
             <SignalNetwork />
@@ -54,9 +61,18 @@ function Ecosystem() {
           <SectionLabel>How the layers connect</SectionLabel>
           <div className="mt-10 grid gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-3">
             {[
-              { t: "Operational continuity", d: "Each layer reads and writes into the same operational memory. Nothing is rebuilt twice." },
-              { t: "Progressive intelligence", d: "Ledger captures. OS connects. Intelligence understands. Autopilot acts." },
-              { t: "Single source of truth", d: "One ecosystem replaces a dozen disconnected tools — no integrations, no glue." },
+              {
+                t: "Operational continuity",
+                d: "Each layer reads and writes into the same operational memory. Nothing is rebuilt twice.",
+              },
+              {
+                t: "Progressive intelligence",
+                d: "Ledger captures. OS connects. Intelligence understands. Autopilot acts.",
+              },
+              {
+                t: "Single source of truth",
+                d: "One ecosystem replaces a dozen disconnected tools — no integrations, no glue.",
+              },
             ].map((c) => (
               <div key={c.t} className="bg-background p-8">
                 <h3 className="font-display text-lg text-foreground">{c.t}</h3>
@@ -65,8 +81,12 @@ function Ecosystem() {
             ))}
           </div>
           <div className="mt-12 flex flex-wrap gap-4">
-            <SignalButton to="/contact" variant="primary">Talk to us</SignalButton>
-            <SignalButton to="/ledger" variant="ghost">Start with Ledger</SignalButton>
+            <SignalButton to="/contact" variant="primary">
+              Talk to us
+            </SignalButton>
+            <SignalButton to="/ledger" variant="ghost">
+              Start with Ledger
+            </SignalButton>
           </div>
         </div>
       </section>

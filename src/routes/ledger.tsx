@@ -5,9 +5,16 @@ export const Route = createFileRoute("/ledger")({
   head: () => ({
     meta: [
       { title: "Neurvyn Ledger — Daily operational utility" },
-      { name: "description", content: "Billing, inventory, CRM. The operating habit that grounds the Neurvyn ecosystem in everyday work." },
+      {
+        name: "description",
+        content:
+          "Billing, inventory, CRM. The operating habit that grounds the Neurvyn ecosystem in everyday work.",
+      },
       { property: "og:title", content: "Neurvyn Ledger" },
-      { property: "og:description", content: "The daily operational utility layer for modern businesses." },
+      {
+        property: "og:description",
+        content: "The daily operational utility layer for modern businesses.",
+      },
     ],
   }),
   component: () => (
@@ -22,10 +29,26 @@ export const Route = createFileRoute("/ledger")({
         ecosystemRole:
           "Ledger is the entry point. It establishes the operational habit and seeds the business memory that OS, Intelligence and Autopilot later build on.",
         capabilities: [
-          { title: "Billing & invoicing", description: "Quotes, invoices, recurring billing, payment reconciliation — built around real operational workflows." },
-          { title: "Inventory operations", description: "Stock, movements, variants and supplier flow modelled as operational signals, not spreadsheets." },
-          { title: "Customer relationships", description: "A CRM that knows the operation. Pipeline, history and context — shared across the ecosystem." },
-          { title: "Daily workflow", description: "Tasks, approvals and recurring operational rituals — the foundation of business memory." },
+          {
+            title: "Billing & invoicing",
+            description:
+              "Quotes, invoices, recurring billing, payment reconciliation — built around real operational workflows.",
+          },
+          {
+            title: "Inventory operations",
+            description:
+              "Stock, movements, variants and supplier flow modelled as operational signals, not spreadsheets.",
+          },
+          {
+            title: "Customer relationships",
+            description:
+              "A CRM that knows the operation. Pipeline, history and context — shared across the ecosystem.",
+          },
+          {
+            title: "Daily workflow",
+            description:
+              "Tasks, approvals and recurring operational rituals — the foundation of business memory.",
+          },
         ],
         next: { to: "/solutions", label: "Solutions" },
       }}
